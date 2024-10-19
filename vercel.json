@@ -11,5 +11,8 @@
       "src": "/api/predict",
       "dest": "api/predict.py"
     }
-  ]
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.8"  // Specify the Python version if needed
+  }
 }
