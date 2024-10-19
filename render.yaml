@@ -1,9 +1,9 @@
 services:
   - type: web
-    name: sentiment-analysis-api  # Replace with your desired service name
+    name: sentiment-analysis-api
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn api.predict:app --bind 0.0.0.0:10000
     autoDeploy: true
-    region: oregon  # Adjust as needed; you may need to select a region that supports free tier
-    plan: free  # Specify the free plan to avoid costs
+    region: oregon
+    plan: free
