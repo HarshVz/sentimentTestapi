@@ -4,7 +4,7 @@ from flask import Flask, request
 from flask_cors import CORS  # Import CORS
 
 # Load the model
-with open('../sentiment_model.pkl', 'rb') as f:  # Adjust the path if necessary
+with open('./sentiment_model.pkl', 'rb') as f:  # Adjust the path if necessary
     model = pickle.load(f)
 
 app = Flask(__name__)
