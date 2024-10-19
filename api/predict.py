@@ -1,12 +1,16 @@
 import json
 import pickle
 from flask import Flask, request
+from flask_cors import CORS  # Import CORS
 
 # Load the model
-with open('./sentiment_model.pkl', 'rb') as f:
+with open('../sentiment_model.pkl', 'rb') as f:  # Adjust the path if necessary
     model = pickle.load(f)
 
 app = Flask(__name__)
+
+# Initialize CORS
+CORS(app)
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -22,3 +26,6 @@ def predict():
 # Vercel serverless function handler
 def handler(req, res):
     return app(req, res)
+
+if __name__ == '__main__':
+    app.run(debug=True)  # Optional for local testing
